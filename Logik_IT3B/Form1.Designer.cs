@@ -38,42 +38,50 @@
             // 
             this.pBox.BackColor = System.Drawing.Color.White;
             this.pBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pBox.Location = new System.Drawing.Point(12, 12);
+            this.pBox.Location = new System.Drawing.Point(28, 21);
+            this.pBox.Margin = new System.Windows.Forms.Padding(2);
             this.pBox.Name = "pBox";
-            this.pBox.Size = new System.Drawing.Size(378, 447);
+            this.pBox.Size = new System.Drawing.Size(275, 312);
             this.pBox.TabIndex = 0;
             this.pBox.TabStop = false;
+            this.pBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pBox_Paint);
+            this.pBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pBox_MouseClick);
             // 
             // btnEvaluate
             // 
-            this.btnEvaluate.Location = new System.Drawing.Point(12, 465);
+            this.btnEvaluate.Location = new System.Drawing.Point(28, 337);
+            this.btnEvaluate.Margin = new System.Windows.Forms.Padding(2);
             this.btnEvaluate.Name = "btnEvaluate";
-            this.btnEvaluate.Size = new System.Drawing.Size(158, 34);
+            this.btnEvaluate.Size = new System.Drawing.Size(111, 20);
             this.btnEvaluate.TabIndex = 1;
             this.btnEvaluate.Text = "Vyhodnotit";
             this.btnEvaluate.UseVisualStyleBackColor = true;
             // 
             // btnNewGame
             // 
-            this.btnNewGame.Location = new System.Drawing.Point(231, 465);
+            this.btnNewGame.Location = new System.Drawing.Point(192, 337);
+            this.btnNewGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(158, 34);
+            this.btnNewGame.Size = new System.Drawing.Size(111, 20);
             this.btnNewGame.TabIndex = 1;
             this.btnNewGame.Text = "Nová hra";
             this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 511);
+            this.ClientSize = new System.Drawing.Size(332, 368);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.btnEvaluate);
             this.Controls.Add(this.pBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Logik";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).EndInit();
             this.ResumeLayout(false);
 

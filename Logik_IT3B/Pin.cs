@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Text;
 
 namespace Logik_IT3B
 {
     public class Pin
     {
+        private Region region;
+
         public PinState State { get; set; }
+        public Region Region { get => region; }
 
         public Pin()
         {
@@ -19,6 +23,10 @@ namespace Logik_IT3B
             Brush brush = new SolidBrush(GetColor());
             graphics.FillEllipse(brush, point.X, point.Y, size, size);
             graphics.DrawEllipse(pen, point.X, point.Y, size, size);
+
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(point.X, point.Y, size, size);
+            region = new Region(path);
         }
 
         private Color GetColor()
